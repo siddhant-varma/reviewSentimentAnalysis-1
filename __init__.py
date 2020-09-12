@@ -185,7 +185,8 @@ class Analysis:
 		
 		print('[+] Generating word cloud.')
 		big_line = ' '.join(lines)
-		cloud = WordCloud(width=600, height=400).generate(big_line)
+		maskArray = npy.array(Image.open("mask.jpg"))
+		cloud = WordCloud(width=600, height=400,background_color ='white',mask = maskArray,stopwords = set(STOPWORDS)).generate(big_line)
 		if wordcloud:
 			file_path = os.path.join(os.getcwd(), file_path)
 			if os.path.isfile(file_path):
