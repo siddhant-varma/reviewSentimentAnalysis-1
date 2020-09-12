@@ -1,5 +1,5 @@
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer as Analyzer
-from wordcloud import WordCloud
+from wordcloud import WordCloud, STOPWORDS
 from bs4 import BeautifulSoup as Soup
 import matplotlib.pyplot as plot
 from requests import get
@@ -7,6 +7,9 @@ import re
 import progressbar
 from time import sleep
 import os
+import matplotlib.pyplot as pPlot
+import numpy as npy
+from PIL import Image
 
 
 class Scraper:
